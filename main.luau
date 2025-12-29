@@ -1,5 +1,5 @@
 local _ENV = (getgenv or getrenv or getfenv)()
-local BETA_VERSION = BETA_VERSION or _ENV.BETA_VERSION
+local BETA_VERSION = true
 
 local Scripts = {
 	{
@@ -24,8 +24,8 @@ do
 	_ENV.rz_execute_debounce = tick()
 end
 
-urls.Owner = "https://raw.githubusercontent.com/tlredz/";
-urls.Repository = urls.Owner .. "Scripts/refs/heads/main/";
+urls.Owner = "https://raw.githubusercontent.com/SurusD/";
+urls.Repository = urls.Owner .. "RedzArchive/refs/heads/master/";
 urls.Translator = urls.Repository .. "Translator/";
 urls.Utils = urls.Repository .. "Utils/";
 
