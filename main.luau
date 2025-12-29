@@ -2,15 +2,9 @@ local _ENV = (getgenv or getrenv or getfenv)()
 local BETA_VERSION = true
 
 local Scripts = {
-	{
 		GameId = 994732206,
-		UrlPath = if BETA_VERSION then "BLOX-FRUITS-BETA.lua" else "BloxFruits.luau"
-	},
-	{
-		PlacesIds = {10260193230},
-		UrlPath = "MemeSea.luau"
-	}
-}
+		UrlPath = "BLOX-FRUITS-BETA.lua"
+},
 
 local fetcher, urls = {}, {}
 
@@ -117,9 +111,7 @@ local function IsPlace(Script)
 	end
 	return false
 end
-
-for _, Script in Scripts do
-	if IsPlace(Script) then
-		return fetcher.load("{Repository}Games/" .. Script.UrlPath)(fetcher, ...)
-	end
+local Script = Scripts
+if IsPlace(Script) then
+	return fetcher.load("{Repository}Games/" .. Script.UrlPath)(fetcher, ...)
 end
